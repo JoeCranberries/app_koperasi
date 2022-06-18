@@ -51,11 +51,11 @@ class LoginController extends Controller
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
             if (auth()->user()->level == 'admin') {
-                return redirect()->route('x');
+                return redirect()->route('admin');
             } else if (auth()->user()->level == 'agen') {
-                return redirect()->route('y');
+                return redirect('agen');
             } else {
-                return redirect()->route('z');
+                return redirect()->route('anggota');
             }
         } else {
             return redirect()->route('login')

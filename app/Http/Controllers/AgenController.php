@@ -19,7 +19,6 @@ class AgenController extends Controller
         $this->middleware('auth');
     }
 
-
     public function index()
     {
         $datas = Pinjaman::all();

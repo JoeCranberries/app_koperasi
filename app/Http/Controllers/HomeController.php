@@ -27,6 +27,11 @@ class HomeController extends Controller
     {
         return view('anggota.index');
     }
+
+    public function agenHome()
+    {
+        return view('agen.index');
+    }
     public function adminHome()
     {
         $d['user'] = User::count();
