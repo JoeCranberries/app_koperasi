@@ -23,10 +23,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('anggota.index');
-    }
 
     public function agenHome()
     {
@@ -40,7 +36,6 @@ class HomeController extends Controller
 
     public function anggotaHome()
     {
-
-        return view('admin.userall');
+        return view('anggota.index');
     }
 }

@@ -24,9 +24,9 @@
                     <td>{{ $value->name }}</td>
                     <td>{{ $value->email}}</td>
                    <td>
-                  <form action="/dashboard/posts/{{ $value->id }}" method="post" class="d-inline">
-                    @method('delete')
+                  <form action="{{route('admin.destroy',$value->id) }}" method="post" class="d-inline">
                     @csrf
+                    @method('DELETE')
                   <button class="badge bg-danger border-0"  onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span></button>
                   </form>
               </td>

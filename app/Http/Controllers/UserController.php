@@ -14,4 +14,11 @@ class UserController extends Controller
         $datas = User::all();
         return view('admin.userall', compact('datas'));
     }
+
+    public function destroy($id)
+    {
+        $datas = User::find($id);
+        $datas->delete();
+        return redirect('admin/anggota');
+    }
 }
