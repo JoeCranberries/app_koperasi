@@ -19,7 +19,7 @@
             </tr>
           </thead>
           <tbody>
-               @foreach ($datas as $value)
+               {{-- @foreach ($datas as $value)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $value->name }}</td>
@@ -32,7 +32,7 @@
                   </form>
               </td>
                   </tr>
-                  @endforeach
+                  @endforeach --}}
           </tbody>
         </table>
       </div>

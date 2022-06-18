@@ -21,7 +21,7 @@
         </h6>
         <ul class="nav flex-column">
         <li class="nav-item">
-           <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="">
+           <a class="nav-link {{ Request::is('dashboard/*') ? 'active' : '' }}" href="/agen">
               <span data-feather="grid"></span>
               Data Pinjaman
             </a>

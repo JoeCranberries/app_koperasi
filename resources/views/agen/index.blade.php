@@ -27,7 +27,7 @@
                @foreach ($datas as $value)
                   <tr>
                     <td>{{ $value->peminjam_id }}</td>
-                    <td>{{ $value->jumlah }}</td>
+                    <td>{{ number_format($value->jumlah,0, '.', '.') }}</td>
                     <td>{{ $value->jangka_waktu }}</td>
                      <td>{{ $value->bayar_perbulan }}</td>
                       <td>{{ $value->status }}</td>

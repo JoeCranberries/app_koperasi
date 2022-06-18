@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/anggota', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('x')->middleware('admin');
 
@@ -32,6 +32,6 @@ Route::get('/admin/anggota', [App\Http\Controllers\HomeController::class, 'anggo
 
 Route::resource('/admin/anggota', UserController::class);
 
-Route::get('/agen', [App\Http\Controllers\AgenController::class, 'index'])->name('y')->middleware('kasir');
+Route::get('/agen', [App\Http\Controllers\AgenController::class, 'index'])->name('y')->middleware('agen');
 
 Route::resource('agen', AgenController::class);

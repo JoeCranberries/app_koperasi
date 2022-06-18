@@ -26,8 +26,8 @@ class AgenController extends Controller
      */
     public function create()
     {
-        $model = new Pinjaman;
-        return view('agen.create', compact('model'));
+        $models = new Pinjaman;
+        return view('agen.create', compact('models'));
     }
 
     /**
@@ -38,14 +38,14 @@ class AgenController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new Pinjaman;
-        $model->agen_id = $request->agen_id;
-        $model->jumlah = $request->jumlah;
-        $model->peminjam_id = $request->peminjam_id;
-        $model->jangka_waktu = $request->jangka_waktu;
-        $model->bayar_perbulan = $request->bayar_perbulan;
-        $model->status = $request->status;
-        $model->save();
+        $models = new Pinjaman;
+        $models->agen_id = $request->agen_id;
+        $models->jumlah = $request->jumlah;
+        $models->peminjam_id = $request->peminjam_id;
+        $models->jangka_waktu = $request->jangka_waktu;
+        $models->bayar_perbulan = $request->bayar_perbulan;
+        $models->status = $request->status;
+        $models->save();
 
         return redirect('agen');
     }

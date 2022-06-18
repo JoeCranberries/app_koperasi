@@ -16,10 +16,10 @@ class Kasir
      */
     public function handle(Request $request, Closure $next)
     {
-         if (auth()->user()->level == 'kasir') {
+        if (auth()->user()->level == 'agen') {
             return $next($request);
-        }else{
-        return redirect('home')->with('error', "tidak ada akses");
+        } else {
+            return redirect('home')->with('error', "tidak ada akses");
         }
     }
 }
