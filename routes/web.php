@@ -24,14 +24,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/anggota', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/anggota', [App\Http\Controllers\HomeController::class, 'index'])->name('anggota')->middleware('anggota');
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('x')->middleware('admin');
+
+Route::get('/agen', [App\Http\Controllers\AgenController::class, 'index'])->name('y')->middleware('agen');
 
 Route::get('/admin/anggota', [App\Http\Controllers\HomeController::class, 'anggotaHome'])->name('x')->middleware('admin');
 
 Route::resource('/admin/anggota', UserController::class);
-
-Route::get('/agen', [App\Http\Controllers\AgenController::class, 'index'])->name('y')->middleware('agen');
 
 Route::resource('agen', AgenController::class);

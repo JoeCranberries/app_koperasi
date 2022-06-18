@@ -13,6 +13,7 @@
         <table class="table table-bordered border-secondary">
           <thead>
             <tr>
+              <th scope="col">No</th>
               <th scope="col">peminjam</th>
               <th scope="col">jumlah pinjaman</th>
               <th scope="col">jangka waktu</th>
@@ -26,10 +27,11 @@
           <tbody>
                @foreach ($datas as $value)
                   <tr>
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $value->peminjam_id }}</td>
                     <td>{{ number_format($value->jumlah,0, '.', '.') }}</td>
                     <td>{{ $value->jangka_waktu }}</td>
-                     <td>{{ $value->bayar_perbulan }}</td>
+                     <td>{{ number_format($value->bayar_perbulan,0, '.', '.') }}</td>
                       <td>{{ $value->status }}</td>
                       <td>{{ $value->agen_id }}</td>
                    <td>

@@ -55,7 +55,7 @@ class LoginController extends Controller
             } else if (auth()->user()->level == 'agen') {
                 return redirect()->route('y');
             } else {
-                return redirect()->route('home');
+                return redirect()->route('anggota');
             }
         } else {
             return redirect()->route('login')

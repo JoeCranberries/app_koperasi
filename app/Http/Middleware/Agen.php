@@ -19,7 +19,7 @@ class Kasir
         if (auth()->user()->level == 'agen') {
             return $next($request);
         } else {
-            return redirect('home')->with('error', "tidak ada akses");
+            return redirect('/')->with('error', "tidak ada akses");
         }
     }
 }
