@@ -53,13 +53,11 @@ class LoginController extends Controller
             if (auth()->user()->level == 'admin') {
                 return redirect()->route('admin');
             } else if (auth()->user()->level == 'agen') {
-                return redirect('agen');
+                return redirect()->route('agen');
             } else {
-                return redirect()->route('anggota');
+                return redirect()->route('login')
+                    ->with('error', 'Email-adddress and password are wrong.');
             }
-        } else {
-            return redirect()->route('login')
-                ->with('error', 'Email-adddress and password are wrong.');
         }
     }
 }

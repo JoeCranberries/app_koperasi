@@ -1,7 +1,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
   <div class="container">
-  <a class="navbar-brand"  href=""></a>   
+  <a class="navbar-brand"  href="register">Register</a>   
         </ul>
          
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                       @csrf
                                     </form>
-                                </div>
+                                </div>z
                             </li>
                         @endguest
                     </ul>

@@ -29,7 +29,7 @@ Route::get('/anggota', [App\Http\Controllers\HomeController::class, 'index'])->n
 Route::get('/agen', [App\Http\Controllers\HomeController::class, 'agenHome'])
     ->name('agen')->middleware('agen');
 
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->middleware('admin');
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin')->middleware('admin');
 
 Route::get('/admin/anggota', [App\Http\Controllers\HomeController::class, 'anggotaHome'])->name('admin')->middleware('admin');
 

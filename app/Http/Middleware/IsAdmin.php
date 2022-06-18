@@ -19,7 +19,7 @@ class IsAdmin
         if (auth()->user()->level == 'admin') {
             return $next($request);
         } else {
-            return redirect('/')->with('error', "tidak ada akses");
+            return redirect('login')->with('error', "tidak ada akses");
         }
     }
 }

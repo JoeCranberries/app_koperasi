@@ -19,7 +19,7 @@ class Agen
         if (auth()->user()->level == 'agen') {
             return $next($request);
         } else {
-            return redirect('/')->with('error', "tidak ada akses");
+            return redirect('login')->with('error', "tidak ada akses");
         }
     }
 }
