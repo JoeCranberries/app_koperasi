@@ -32,10 +32,6 @@ class HomeController extends Controller
         $d['user'] = User::count();
         return view('admin.index', $d);
     }
-    public function kasir()
-    {
-        return view('agen.index');
-    }
 
     public function anggotaHome()
     {

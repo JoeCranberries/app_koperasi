@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Buku;
+use App\Models\Simpanan;
 use Illuminate\Http\Request;
 
-class BukuController extends Controller
+class SimpananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class BukuController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Buku  $buku
+     * @param  \App\Models\Simpanan  $simpanan
      * @return \Illuminate\Http\Response
      */
-    public function show(Buku $buku)
+    public function show(Simpanan $simpanan)
     {
         //
     }
@@ -52,10 +52,10 @@ class BukuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Buku  $buku
+     * @param  \App\Models\Simpanan  $simpanan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Buku $buku)
+    public function edit(Simpanan $simpanan)
     {
         //
     }
@@ -64,10 +64,10 @@ class BukuController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Buku  $buku
+     * @param  \App\Models\Simpanan  $simpanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Buku $buku)
+    public function update(Request $request, Simpanan $simpanan)
     {
         //
     }
@@ -75,10 +75,10 @@ class BukuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Buku  $buku
+     * @param  \App\Models\Simpanan  $simpanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buku $buku)
+    public function destroy(Simpanan $simpanan)
     {
         //
     }

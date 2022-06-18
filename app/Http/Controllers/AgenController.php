@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use App\Models\Pinjaman;
 
-class TransaksiController extends Controller
+
+class AgenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
+        $datas = Pinjaman::all();
+        return view('agen.index', compact('datas'));
     }
 
     /**
@@ -24,7 +26,8 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        //
+        $model = new Pinjaman;
+        return view('agen.create', compact('model'));
     }
 
     /**
@@ -35,16 +38,25 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new Pinjaman;
+        $model->agen_id = $request->agen_id;
+        $model->jumlah = $request->jumlah;
+        $model->peminjam_id = $request->peminjam_id;
+        $model->jangka_waktu = $request->jangka_waktu;
+        $model->bayar_perbulan = $request->bayar_perbulan;
+        $model->status = $request->status;
+        $model->save();
+
+        return redirect('agen');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Transaksi  $transaksi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Transaksi $transaksi)
+    public function show($id)
     {
         //
     }
@@ -52,10 +64,10 @@ class TransaksiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Transaksi  $transaksi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaksi $transaksi)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +76,10 @@ class TransaksiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Transaksi  $transaksi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transaksi $transaksi)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +87,10 @@ class TransaksiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Transaksi  $transaksi
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaksi $transaksi)
+    public function destroy($id)
     {
         //
     }
