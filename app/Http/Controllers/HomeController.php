@@ -24,14 +24,16 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function agenHome()
-    {
-        return view('agen.index');
-    }
+
     public function adminHome()
     {
         $d['user'] = User::count();
         return view('admin.index', $d);
+    }
+
+    public function agenHome()
+    {
+        return view('agen');
     }
 
     public function anggotaHome()

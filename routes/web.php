@@ -26,10 +26,9 @@ Auth::routes();
 
 Route::get('/admin/index', [App\Http\Controllers\HomeController::class, 'adminHome'])->middleware('admin');
 
-Route::get('/anggota', [App\Http\Controllers\HomeController::class, 'anggotaHome'])->name('anggota')->middleware();
+Route::get('/anggota', [App\Http\Controllers\HomeController::class, 'anggotaHome'])->middleware();
 
-Route::get('/agen/index', [App\Http\Controllers\HomeController::class, 'agenHome'])
-    ->name('agen')->middleware('agen');
+Route::get('/agen', [App\Http\Controllers\HomeController::class, 'agenHome'])->middleware('agen');
 
 
 Route::resource('/admin/anggota', UserController::class);
