@@ -25,6 +25,7 @@ class AgenController extends Controller
         return view('agen.index', compact('models'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -53,7 +54,7 @@ class AgenController extends Controller
         $models->status = $request->status;
         $models->save();
 
-        return redirect('agen');
+        return redirect('agen')->with('success', 'New Pinjaman has been added');
     }
 
     /**
@@ -64,7 +65,6 @@ class AgenController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -97,7 +97,7 @@ class AgenController extends Controller
         $models->status = $request->status;
         $models->save();
 
-        return redirect('agen');
+        return redirect('agen')->with('success', 'Pinjaman has been Updated');
     }
 
     /**
@@ -110,7 +110,7 @@ class AgenController extends Controller
     {
         $models = Pinjaman::find($id);
         $models->delete();
-        return redirect('agen');
+        return redirect('agen')->with('success', 'Pinjaman has been deleted');
     }
 
     public function agenCari()

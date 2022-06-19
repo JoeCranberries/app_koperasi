@@ -1,4 +1,4 @@
-@extends('agen.layouts.main')
+@extends('admin.layouts.main')
 
 @section('content')
 
@@ -13,7 +13,7 @@
           @endif
 
          <div class="table-responsive col-lg-6">
-        <a href="/agen/create" class="btn btn-primary mb-3">Tambah Data Pinjaman</a>  
+        <a href="/agen/create" class="btn btn-primary mb-3">Data Pinjaman</a>  
         </div>
 
        <div class="table-responsive col-lg-10">

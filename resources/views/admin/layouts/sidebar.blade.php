@@ -14,7 +14,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="">
+            <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/admin/laporan">
               <span data-feather="file-text"></span>
               Laporan
             </a>

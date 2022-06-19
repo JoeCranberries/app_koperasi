@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 
+use App\Models\Pinjaman;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -39,5 +40,11 @@ class HomeController extends Controller
     public function anggotaHome()
     {
         return view('anggota.index');
+    }
+
+    public function index()
+    {
+        $models = Pinjaman::all();
+        return view('admin.laporan', compact('models'));
     }
 }
