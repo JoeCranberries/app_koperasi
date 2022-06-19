@@ -6,7 +6,7 @@
         <h1 class="h2">Welcome back, {{ auth()->user()->name }}</h1>
       </div>
          <div class="table-responsive col-lg-6">
-        <a href="/agen/create" class="btn btn-primary mb-3">Tambah Data Peminjam</a>  
+        <a href="/agen/create" class="btn btn-primary mb-3">Tambah Data Pinjaman</a>  
         </div>
        <div class="table-responsive col-lg-10">
         {{-- <a href="" class="btn btn-primary mb-3"></a>   --}}
@@ -25,19 +25,21 @@
             </tr>
           </thead>
           <tbody>
-               @foreach ($datas as $value)
+               @foreach ($models as $value)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $value->peminjam_id }}</td>
+                    <td>{{ $value->nama_peminjam }}</td>
                     <td>{{ number_format($value->jumlah,0, '.', '.') }}</td>
                     <td>{{ $value->jangka_waktu }}</td>
                      <td>{{ number_format($value->bayar_perbulan,0, '.', '.') }}</td>
                       <td>{{ $value->status }}</td>
-                      <td>{{ $value->agen_id }}</td>
+                      <td>{{ $value->nama_agen}}</td>
                    <td>
-                  <form action="/{{ $value->id }}" method="post" class="d-inline">
-                    @method('delete')
+                  <a href="/agen/{{ $value->id }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+
+                  <form action="{{route('agen.destroy',$value->id) }}" method="post" class="d-inline">
                     @csrf
+                    @method('DELETE')
                   <button class="badge bg-danger border-0"  onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span></button>
                   </form>
               </td>

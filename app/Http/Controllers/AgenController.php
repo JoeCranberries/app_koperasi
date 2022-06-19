@@ -21,8 +21,8 @@ class AgenController extends Controller
 
     public function index()
     {
-        $datas = Pinjaman::all();
-        return view('agen.index', compact('datas'));
+        $models = Pinjaman::all();
+        return view('agen.index', compact('models'));
     }
 
     /**
@@ -45,9 +45,9 @@ class AgenController extends Controller
     public function store(Request $request)
     {
         $models = new Pinjaman;
-        $models->agen_id = $request->agen_id;
+        $models->nama_agen = $request->nama_agen;
         $models->jumlah = $request->jumlah;
-        $models->peminjam_id = $request->peminjam_id;
+        $models->nama_peminjam = $request->nama_peminjam;
         $models->jangka_waktu = $request->jangka_waktu;
         $models->bayar_perbulan = $request->bayar_perbulan;
         $models->status = $request->status;
@@ -75,7 +75,8 @@ class AgenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $models = Pinjaman::find($id);
+        return view('agen.edit', compact('models'));
     }
 
     /**
@@ -87,7 +88,16 @@ class AgenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $models = Pinjaman::find($id);
+        $models->nama_agen = $request->nama_agen;
+        $models->jumlah = $request->jumlah;
+        $models->nama_peminjam = $request->nama_peminjam;
+        $models->jangka_waktu = $request->jangka_waktu;
+        $models->bayar_perbulan = $request->bayar_perbulan;
+        $models->status = $request->status;
+        $models->save();
+
+        return redirect('agen');
     }
 
     /**
@@ -98,6 +108,14 @@ class AgenController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $models = Pinjaman::find($id);
+        $models->delete();
+        return redirect('agen');
+    }
+
+    public function agenCari()
+    {
+        header('Content-Type: application/json');
+        echo json_encode([['label' => 'lorem', 'value' => 1], ['label' => 'ipsum', 'value' => 2]]);
     }
 }

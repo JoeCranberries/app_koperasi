@@ -11,11 +11,52 @@
         @csrf
   <div class="mb-3">
     <label for="agen" class="form-label">Agen</label>
-    <input type="text" class="form-control  @error('agen_id') is-invalid @enderror" id="agen_id" name="agen_id" required autofocus value="{{old('agen_id')}}">
-    @error('agen_id')
+    <input type="text" class="form-control  @error('nama_agen') is-invalid @enderror" id="nama_agen" name="nama_agen" required autofocus value="{{old('nama_agen')}}">
+    @error('nama_agen')
                     <div class="alert alert-danger">{{$message}}</div>
     @enderror
+
+
+    {{-- <script>
+    const CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+            $( "#agen_cari" ).autocomplete({
+        source: function( request, response ) {
+          // Fetch data
+          $.ajax({
+            url:"{{route('agen.store') }}",
+            type: 'post',
+            dataType: "json",
+            data: {
+               _token: CSRF_TOKEN,
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
+            }
+          });
+        },
+         select: function (event, ui) {
+          log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+           // Set selection
+          //  $('#employee_search').val(ui.item.label); // display the selected text
+          //  $('#employeeid').val(ui.item.value); // save selected id to input
+          //  return false;
+        }
+      }); --}}
+<script>
+          $( "#agen_id" ).autocomplete({
+                source: "{{route('agen.store') }}",
+                minLength: 2,
+               select: function( event, ui ) {
+                 log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+                }
+        });
+    
+</script>
+
   </div>
+
    <div class="mb-3">
     <label for="title" class="form-label">Jumlah</label>
     <input type="text" class="form-control  @error('jumlah') is-invalid @enderror" id="jumlah" name="jumlah" required autofocus value="{{old('title')}}">
@@ -24,7 +65,7 @@
     @enderror
   </div> <div class="mb-3">
     <label for="title" class="form-label">Peminjam</label>
-    <input type="text" class="form-control  @error('title') is-invalid @enderror" id="peminjam_id" name="peminjam_id" required autofocus value="{{old('peminjam_id')}}">
+    <input type="text" class="form-control  @error('nama_peminjam') is-invalid @enderror" id="nama_peminjam" name="nama_peminjam" required autofocus value="{{old('nama_peminjam')}}">
     @error('title')
                     <div class="alert alert-danger">{{$message}}</div>
     @enderror
@@ -44,6 +85,7 @@
     <label for="status" class="form-label">Status</label>
     <select class="form-select" id="status" name="status">
       <option selected>pilih status</option>
+    <option value="lunas">pending</option>
     <option value="lunas">lunas</option>
     <option value="belum_lunas">belum lunas</option>
     </select>

@@ -33,6 +33,8 @@ Route::get('/agen', [App\Http\Controllers\HomeController::class, 'agenHome'])->m
 
 Route::resource('/admin/anggota', UserController::class);
 
+Route::get('/agen/cari', [App\Http\Controllers\AgenController::class, 'agenCari']);
+
 Route::resource('admin', UserController::class);
 
 Route::resource('agen', AgenController::class);

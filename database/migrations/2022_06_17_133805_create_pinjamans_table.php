@@ -15,10 +15,10 @@ class CreatePinjamansTable extends Migration
     {
         Schema::create('pinjamans', function (Blueprint $table) {
             $table->id();
-            $table->integer('agen_id')->unsigned();
+            $table->varchar('nama_agen');
             $table->integer('jumlah');
-            $table->integer('peminjam_id')->unsigned();
-            $table->char('jangka_waktu', 2);
+            $table->varchar('nama_peminjam');
+            $table->varchar('jangka_waktu');
             $table->integer('bayar_perbulan');
             $table->enum('status', ['pending', 'belum_lunas', 'lunas']);
             $table->timestamps();
