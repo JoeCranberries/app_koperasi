@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.88.1">
     <title>Dashboard | Agen</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
 
     
 
@@ -17,6 +17,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.css" integrity="sha512-TfnGOYsHIBHwx3Yg6u6jCWhqz79osu5accjEmw8KYID9zfWChaGyjDCmJIdy9fJjpvl9zXxZamkLam0kc5p/YQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
 

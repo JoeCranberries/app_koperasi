@@ -13,8 +13,12 @@
           @endif
 
          <div class="table-responsive col-lg-6">
-        <a href="/agen/create" class="btn btn-primary mb-3">Tambah Data Pinjaman</a>  
-        </div>
+           <a href="/agen/create" class="btn btn-primary mb-3">Tambah Data Pinjaman</a>  
+           
+           <a href="/agen/cetak" target="blank" class="btn btn-primary border-0 mb-3"><i class="bi bi-printer"></i> Cetak</a>
+          </div> 
+      
+        
 
        <div class="table-responsive col-lg-10">
         {{-- <a href="" class="btn btn-primary mb-3"></a>   --}}

@@ -25,6 +25,11 @@ class AgenController extends Controller
         return view('agen.index', compact('models'));
     }
 
+    public function cetakData()
+    {
+        $models = Pinjaman::all();
+        return view('agen.cetakdata', compact('models'));
+    }
 
     /**
      * Show the form for creating a new resource.
